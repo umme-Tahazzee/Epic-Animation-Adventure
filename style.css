@@ -16,25 +16,58 @@ body {
 
 }
 
+.cursor {
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    position: fixed;
+    background-color: #EDBFFF;
+    z-index: 9;
+    transition: backgroud-image ease 0.5s;
+    background-position: center;
+    background-size: cover;
+    mix-blend-mode: difference;
+    transform: left linear 0.1s top linear 0.1s;
+}
+
+#purple {
+    height: 100vh;
+    width: 100vw;
+    top: 0;
+    position: fixed;
+    background-color: purple;
+    z-index: 100;
+    opacity: 0;
+    display: none;
+    transition: all ease 1s;
+}
+
 #main {
     background-color: #000;
+    cursor: none;
 
 }
 
 .page1 {
     min-height: 100vh;
-    width: 100vw;
+    width: 100%;
+    position: relative;
+    z-index: 9;
+    padding-top: 10vw;
 
 }
 
+
 #nav {
-    height: 60px;
+    height: 2vw;
     width: 100%;
-    /* background-color: red; */
     display: flex;
     align-items: center;
     justify-content: space-between;
     padding: 0 30px;
+    position: fixed;
+    mix-blend-mode: difference;
+    z-index: 102;
 
 }
 
@@ -67,10 +100,16 @@ body {
     text-decoration: underline;
 }
 
+.page1 {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 9;
+}
+
 .page1>h1 {
     font-size: 7vw;
     font-weight: 400;
-    margin-top: 10vw;
     margin-left: 7vw;
     font-family: 'Nabla', cursive;
 }
@@ -95,6 +134,8 @@ body {
     min-height: 100vh;
     width: 100%;
     border-bottom: 2px solid darkblue;
+    position: relative;
+    z-index: 9;
 }
 
 .page2 h1 {
@@ -114,19 +155,19 @@ body {
     display: flex;
     align-items: center;
     justify-content: space-between;
-   
+
 }
 
 .page2-left {
     width: 38%;
     font-weight: 100;
-    
+
 }
 
 .page2-right {
     /* background-color: blue; */
     width: 40%;
-    
+
 }
 
 .page2-left h2 {
@@ -139,19 +180,157 @@ body {
 
 .page2-right>p {
     font-size: 1.5em;
-    font-weight: 200; 
-    color:#111;
+    font-weight: 200;
+    color: #111;
 }
-.page2-right button{
-      width: 100%;
-      border-radius: 50px;
-      border: none;
-      padding: 4px 0;
-      background-color: palevioletred;
-      color: black;
-      margin-top: 20px;
+
+.page2-right button {
+    width: 100%;
+    border-radius: 50px;
+    border: none;
+    padding: 4px 0;
+    background-color: palevioletred;
+    color: black;
+    margin-top: 20px;
 }
-.page3{
-      min-height: 100vh;
-      width: 100%;
+
+.page3 {
+
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding-top: 100px;
+    position: relative;
+    z-index: 9;
+    /* border-bottom: 2px solid darkblue; */
+
+}
+
+.page3 h1 {
+    font-weight: 500;
+    font-size: 6vw;
+    color: #111;
+    margin-left: 100px;
+}
+
+.page3-part1 {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+
+}
+
+.page3-part1 img {
+    height: 500px;
+    width: 650px;
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-bottom: 10px;
+}
+
+.page4 {
+
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    padding: 170px 100px;
+    z-index: 9;
+}
+
+.elem {
+    /* background-color: salmon; */
+    margin-bottom: 10PX;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.elem h1 {
+    /* color:#000; */
+    position: relative;
+    font-size: 7vw;
+    font-weight: 600;
+    transition: all ease-out 0.5s;
+}
+
+.elem img {
+    height: 15vw;
+    margin-top: 100px;
+    position: absolute;
+    opacity: 0;
+    transition: all ease-out 0.5s;
+    transform: translateY(10%) rotate(2deg);
+
+}
+
+.elem img:nth-child(1) {
+    left: 2%;
+}
+
+.elem img:nth-child(3) {
+    right: 10%;
+}
+
+.text-div {
+    /* background-color: lightblue; */
+    height: 140px;
+    overflow: hidden;
+}
+
+.page5 {
+    min-height: 100vh;
+    width: 100%;
+    /* background-color: purple; */
+    position: relative;
+    z-index: 9;
+}
+
+
+
+
+.elem:hover h1 {
+    transform: translateY(-100%);
+    color: purple;
+
+}
+
+.elem:hover img {
+    opacity: 1;
+    transform: translateY(0%) rotate(0deg);
+}
+
+.page5 {
+    font-size: 1vw;
+    text-transform: uppercase;
+    font-weight: 300;
+    padding: 140px 100px;
+
+}
+
+.page5 h2 {
+    font-size: 2vw;
+    text-transform: uppercase;
+    font-weight: 200;
+    margin-bottom: 50px;
+
+}
+
+.box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90px;
+    padding: 0 20px;
+    border-top: 1.5px solid gray;
+}
+
+.box:nth-last-child(1) {
+    border-bottom: 1.5px solid gray;
+}
+
+footer {
+    height: 90vh;
+    width: 100%;
+
+
 }
